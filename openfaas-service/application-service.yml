@@ -1,0 +1,11 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: <openfaas-platform-url>
+functions:
+  application-service:
+    lang: python3-debian
+    handler: ./application-service
+    image: <dockerhub-user>/application-service:latest
+    environment:
+      PRIMEHUB_DEPLOYMENT_URL: <primehub-deployment-url>
